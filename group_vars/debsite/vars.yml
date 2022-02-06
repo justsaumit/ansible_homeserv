@@ -1,0 +1,10 @@
+username: root
+packages:
+     - openssh-server
+     - vim
+     - ranger
+     - neofetch
+     - git
+     - nginx
+     - certbot
+     - python3-certbot-ngix

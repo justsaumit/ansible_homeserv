@@ -1,0 +1,8 @@
+username: raspi
+packages:
+    - vim
+    - htop
+    - ranger
+    - neofetch
+    - speedtest-cli
+    - tmux

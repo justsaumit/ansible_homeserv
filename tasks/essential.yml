@@ -1,0 +1,26 @@
+- name: Update packages (Debian-based)
+  apt: 
+   update_cache: yes
+   upgrade: yes
+
+- name: Install essential packages
+  package:
+     name: "{{ packages }}"
+    state: latest
+
+- name: Check is ntp is enabled
+  services: name=ntpd state=started enable=yes
+
+- name: Disable SSH password auth
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regex: "^#PasswordAuthentication yes"
+    line: "PasswordAuthentication no"
+  register: sshd_config
+
+- name: Enable passwordless sudo for "{{ username }}"
+  lineinfile:
+    dest: /etc/sudoers
+    regexp: "^%wheel"
+    line: {{ username }} ALL=(ALL) NOPASSWD: ALL"
+    validate: "/usr/sbin/visudo -cf %s"

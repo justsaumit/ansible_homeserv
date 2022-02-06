@@ -1,5 +1,5 @@
-[alphapi]
+[alarm]
 homeserver ansible_host=192.168.29.118 ansible_user=raspi
 
-[draconyan]
+[debsite]
 siteserver ansible_host=144.202.54.207 ansible_user=root
