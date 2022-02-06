@@ -1,9 +1,0 @@
----
-- name: Set up NTP on all servers
-  hosts: all
-  become: yes
-
-  tasks:
-   - name: Ensure NTP is installed.
-     apt: name=ntp state=present
-   #-import_tasks: tasks/essential.yml

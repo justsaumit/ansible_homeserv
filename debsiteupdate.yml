@@ -1,0 +1,6 @@
+---
+- hosts: debsite
+
+  tasks:
+   - name: Update packages.
+     import_tasks: tasks/taskdebupdate.yml

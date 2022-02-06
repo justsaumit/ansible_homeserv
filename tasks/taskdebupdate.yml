@@ -1,0 +1,4 @@
+- name: Update packages (Debian-based)
+  apt: 
+      update_cache: yes
+      upgrade: yes

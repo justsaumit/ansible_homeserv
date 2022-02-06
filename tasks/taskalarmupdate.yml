@@ -1,0 +1,4 @@
+- name: Update packages (Arch-based) (run the equivalent of "pacman -Syu")
+  pacman:
+    update_cache: yes
+    upgrade: yes

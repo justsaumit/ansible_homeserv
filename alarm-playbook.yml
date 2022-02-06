@@ -1,0 +1,8 @@
+---
+- hosts: alarm
+
+  tasks:
+   - name: Update packages.
+     import_tasks: tasks/essential-alarm.yml
+   - name: Disable SSH password auth
+     import_tasks: tasks/ssh-disablepass.yml
